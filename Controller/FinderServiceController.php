@@ -26,33 +26,33 @@ class FinderServiceController extends Controller {
     // return search file names..
     public function getFinderData($searchElement){
         
-        //ini_set('memory_limit', '-1');
+        ini_set('memory_limit', '-1');
         
-        $searchV    =  explode(' ', $searchElement);
-        $csvFinalDataArr = array();
+        $searchResult    =  explode(' ', $searchElement);
+        $finalDataArr = array();
          
         // define the path in which file is resides.
-        $csvDir = $this->get('kernel')->getRootDir() . '/../web/uploads/files/';
+        $dir = $this->get('kernel')->getRootDir() . '/../web/uploads/files/';
         
         // if csv dir does not exist create new one
-        if (!is_dir($csvDir))
-            mkdir($csvDir);
+        if (!is_dir($dir))
+            mkdir($dir);
         
         // call the finder class.
         $finder = new Finder();
-        $finder->in($csvDir)->ignoreDotFiles(false);
-        $finder->in($csvDir);   
-        $finder->in($csvDir)->files()->name('*.*');
+        $finder->in($dir)->ignoreDotFiles(false);
+        $finder->in($dir);   
+        $finder->in($dir)->files()->name('*.*');
         
-        foreach ($searchV as $value){
-            $finder->in($csvDir)->files()->contains($value);
+        foreach ($searchResult as $value){
+            $finder->in($dir)->files()->contains($value);
         }
         foreach ($finder as $file) {
-            $csvFinalDataArr[]= $file->getRelativePathname();
+            $finalDataArr[]= $file->getRelativePathname();
         }
-        $csvFinalDataArr = array_unique($csvFinalDataArr);
+        $finalDataArr = array_unique($finalDataArr);
         
-        return $csvFinalDataArr;
+        return $finalDataArr;
     }
 }
 
