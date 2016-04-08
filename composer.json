@@ -1,8 +1,8 @@
 {
-    "name": "montubrainvire/oro-test",
+    "name": "montubrainvire/orotest",
     "description": "A Finder class based search",
     "type": "symfony-bundle",
-    "homepage": "https://github.com/montubrainvire/oro-test/",
+    "homepage": "https://github.com/montubrainvire/orotest/",
     "authors": [{
             "name": "Montu",
             "email": "montu.pepavanshi@brainvire.com"
