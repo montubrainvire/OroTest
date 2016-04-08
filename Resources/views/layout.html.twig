@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Search{% endblock %}</title>
+
+        <link href="{{ asset('bundles/acmetest/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/acmetest/css/common.css') }}" rel="stylesheet">
+
+    {% block stylesheets %}{% endblock %}
+
+
+{% block javascripts %}{% endblock %}
+
+<link rel="icon" type="image/x-icon" href="" />
+</head>
+
+<body>
+    <div class="mainBlueBg">
+        <div class="page">
+        {% block body %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>
