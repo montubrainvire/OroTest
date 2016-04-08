@@ -1,0 +1,21 @@
+{
+    "name": "montubrainvire/OroTest",
+    "description": "A Finder class based search",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/montubrainvire/OroTest/",
+    "authors": [{
+            "name": "Montu",
+            "email": "montu.pepavanshi@brainvire.com"
+        }],
+    "keywords": [
+        "Finder class bundle"
+    ],
+    "license": "proprietary",
+    "require": {
+        "symfony/finder": "^2.8"
+    },
+    "autoload": {
+        "psr-4": { "": "src/" }
+    },
+    "minimum-stability": "dev"
+}
